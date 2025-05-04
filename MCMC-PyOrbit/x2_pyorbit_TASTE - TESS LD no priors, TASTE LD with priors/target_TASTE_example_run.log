@@ -1,0 +1,737 @@
+
+PyORBIT v9.0.21
+
+Python version in use:
+3.8.10 (default, Nov 14 2022, 12:59:47) 
+[GCC 9.4.0]
+
+reloaded_optimize:  False
+reloaded_pyde:  False
+reloaded_emcee:  False
+
+number of system threads: 1
+
+Opening:  LCdata
+Adding common model of planet:  b
+Using orbital model:  circular
+Using orbital parametrization:  Eastman2013_Tcent
+Using Central Time of Transit instead of phase
+
+Using limb darkening coefficient parametrization:  Kipping
+  LC model: lc_model_b is using limb_darkening LD parameters
+Model type: normalization
+
+====================================================================================================
+     Boundaries of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10  ([  0.000023,   0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0  ([  0.000000,   2.000000])
+P                1  ([  1.300000,   1.500000])
+Tc               2  ([2459467.290000, 2459467.420000])
+R_Rs             3  ([  0.000010,   0.500000])
+
+----- common model:  star_parameters
+density          6  ([  0.000000,   5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4  ([  0.000000,   1.000000])
+ld_q2            5  ([  0.000000,   1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7  ([-1000000.000000, 1000000.000000])
+poly_c1          8  ([-1000000.000000, 1000000.000000])
+poly_c2          9  ([-1000000.000000, 1000000.000000])
+
+Include priors:  True
+
+Reference Time Tref:  2458000.0
+
+Dimensions =  11
+Nwalkers =  44
+
+Using threading pool for PyDE: True
+PyDE running
+Boundaries redefined after PyDE output
+PyDE completed
+
+
+====================================================================================================
+     Starting point of the sample/optimization routines    
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002838 ([  0.000023,   0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.662765 ([  0.000000,   2.000000])
+P                1      1.401378 ([  1.300000,   1.500000])
+Tc               2  2459467.356615 ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131311 ([  0.000010,   0.500000])
+
+----- common model:  star_parameters
+density          6      1.446887 ([  0.000000,   5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.399402 ([  0.000000,   1.000000])
+ld_q2            5      0.410469 ([  0.000000,   1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761681 ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002548 ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.052030 ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Starting point projected onto the physical space     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002838 
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.662765 
+P                     1.401378 
+e                 0.000000e+00 
+Tc              2459467.356615 
+R_Rs                  0.131311 
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.446887 
+
+----- common model:  limb_darkening
+ld_c1                 0.518818 
+ld_c2                 0.113164 
+
+----- common model:  polynomial_trend
+poly_c0               0.761681 
+poly_c1               0.002548 
+x_zero          2459467.353901 
+poly_c2               0.052030 
+
+====================================================================================================
+     Derived parameters obtained from starting point     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.957964 
+i                    83.613188 
+mean_long            60.753620 
+R_Rj                  1.212191 
+R_Re                 13.587344 
+T_41                  0.069352 
+T_32                  0.042371 
+a_AU_(rho,R)          0.026285 
+
+
+====================================================================================================
+     Statistics on the log-likelihood     
+====================================================================================================
+
+ LN probability:  8946.928150 
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+*************************************************************
+
+Running emcee
+
+emcee version:  3.1.3
+Using threading pool for emcee: False
+
+Saving temporary steps
+
+
+The chains are more than 50 times longer than the ACF, the estimate can be trusted
+
+Computing the autocorrelation time of the chains
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 1*nthin = 100
+
+Convergence criteria: less than 1% variation in ACF after 50 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+          sample variable      |    ACF   | ACF*nthin | converged at | nteps/ACF 
+                               |          |           |              |           
+          LCdata_jitter_0      |   1.532  |    153.2  |     7900     |     79.0   
+          b_b                  |   1.459  |    145.9  |     7300     |     87.0   
+          b_P                  |   1.469  |    146.9  |     7500     |     85.1   
+          b_Tc                 |   1.439  |    143.9  |     7400     |     87.6   
+          b_R_Rs               |   1.506  |    150.6  |     7600     |     82.3   
+          star_parameters_density |   1.451  |    145.1  |     7300     |     87.5   
+          limb_darkening_ld_q1 |   1.767  |    176.7  |     8900     |     62.8   
+          limb_darkening_ld_q2 |   1.700  |    170.0  |     8900     |     65.3   
+          polynomial_trend_poly_c0 |   1.438  |    143.8  |     7200     |     89.0   
+          polynomial_trend_poly_c1 |   1.564  |    156.4  |     8000     |     76.7   
+          polynomial_trend_poly_c2 |   1.400  |    140.0  |     7100     |     92.1   
+
+All the chains are longer than 50*ACF, but some are shorter than 100*ACF
+PyORBIT should keep running for at least      6567 more steps to reach 100*ACF
+Suggested value for burnin:  8900
+
+
+====================================================================================================
+     Statistics on the posterior of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002847      -0.000078      0.000077 (15-84 p) ([ 0.000023,  0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.660700      -0.025389      0.023662 (15-84 p) ([ 0.000000,  2.000000])
+P                1      1.401378      -0.000001      0.000001 (15-84 p) ([ 1.300000,  1.500000])
+Tc               2  2459467.356603      -0.000221      0.000224 (15-84 p) ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131157      -0.001932      0.001985 (15-84 p) ([ 0.000010,  0.500000])
+
+----- common model:  star_parameters
+density          6      1.452814      -0.107790      0.110920 (15-84 p) ([ 0.000000,  5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.403534      -0.054812      0.058731 (15-84 p) ([ 0.000000,  1.000000])
+ld_q2            5      0.408516      -0.024650      0.028268 (15-84 p) ([ 0.000000,  1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761683      -0.000291      0.000300 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002459      -0.002065      0.002110 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.050854      -0.093648      0.094028 (15-84 p) ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Statistics on the physical parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002847         -0.000078         0.000077 (15-84 p)
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.660700         -0.025389         0.023662 (15-84 p)
+P                 1.401378e+00     -1.003246e-06     1.004289e-06 (15-84 p)
+e                 0.000000e+00 
+Tc              2459467.356603         -0.000221         0.000224 (15-84 p)
+R_Rs                  0.131157         -0.001932         0.001985 (15-84 p)
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.452814         -0.107790         0.110920 (15-84 p)
+
+----- common model:  limb_darkening
+ld_c1                 0.519319         -0.018259         0.018348 (15-84 p)
+ld_c2                 0.116036         -0.040751         0.040262 (15-84 p)
+
+----- common model:  polynomial_trend
+poly_c0               0.761683         -0.000291         0.000300 (15-84 p)
+poly_c1               0.002459         -0.002065         0.002110 (15-84 p)
+x_zero          2459467.353901 
+poly_c2               0.050854         -0.093648         0.094028 (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.966086         -0.151355         0.148130 (15-84 p)
+i                    83.649102         -0.401531         0.379753 (15-84 p)
+mean_long            60.750827         -0.276825         0.275323 (15-84 p)
+R_Rj                  1.226517         -0.065895         0.065944 (15-84 p)
+R_Re                 13.747932         -0.738610         0.739165 (15-84 p)
+T_41                  0.069365         -0.000846         0.000895 (15-84 p)
+T_32                  0.042517         -0.001417         0.001325 (15-84 p)
+a_AU_(rho,R)          0.026649         -0.001491         0.001536 (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+20000.0   steps completed, average lnprob:,  8941.346921490245
+
+
+The chains are more than 50 times longer than the ACF, the estimate can be trusted
+
+Computing the autocorrelation time of the chains
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 1*nthin = 100
+
+Convergence criteria: less than 1% variation in ACF after 50 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+          sample variable      |    ACF   | ACF*nthin | converged at | nteps/ACF 
+                               |          |           |              |           
+          LCdata_jitter_0      |   1.591  |    159.1  |     8000     |    201.1   
+          b_b                  |   1.559  |    155.9  |     7900     |    205.9   
+          b_P                  |   1.602  |    160.2  |     8200     |    198.6   
+          b_Tc                 |   1.494  |    149.4  |     7500     |    217.5   
+          b_R_Rs               |   1.575  |    157.5  |     7900     |    203.8   
+          star_parameters_density |   1.497  |    149.7  |     7500     |    217.1   
+          limb_darkening_ld_q1 |   1.778  |    177.8  |     8900     |    174.9   
+          limb_darkening_ld_q2 |   1.686  |    168.6  |     8500     |    186.8   
+          polynomial_trend_poly_c0 |   1.498  |    149.8  |     7500     |    217.0   
+          polynomial_trend_poly_c1 |   1.637  |    163.7  |     8200     |    194.3   
+          polynomial_trend_poly_c2 |   1.430  |    143.0  |     7200     |    229.4   
+
+All the chains are longer than 100*ACF 
+Suggested value for burnin:  8900
+
+
+====================================================================================================
+     Statistics on the posterior of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002846      -0.000076      0.000079 (15-84 p) ([ 0.000023,  0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.660414      -0.025306      0.023290 (15-84 p) ([ 0.000000,  2.000000])
+P                1      1.401378      -0.000001      0.000001 (15-84 p) ([ 1.300000,  1.500000])
+Tc               2  2459467.356605      -0.000222      0.000224 (15-84 p) ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131157      -0.001935      0.001857 (15-84 p) ([ 0.000010,  0.500000])
+
+----- common model:  star_parameters
+density          6      1.452875      -0.105088      0.108208 (15-84 p) ([ 0.000000,  5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.404035      -0.052709      0.057875 (15-84 p) ([ 0.000000,  1.000000])
+ld_q2            5      0.408497      -0.024722      0.028223 (15-84 p) ([ 0.000000,  1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761678      -0.000296      0.000295 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002534      -0.002076      0.002072 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.052052      -0.092356      0.094894 (15-84 p) ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Statistics on the physical parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002846         -0.000076         0.000079 (15-84 p)
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.660414         -0.025306         0.023290 (15-84 p)
+P                 1.401378e+00     -1.005443e-06     9.817844e-07 (15-84 p)
+e                 0.000000e+00 
+Tc              2459467.356605         -0.000222         0.000224 (15-84 p)
+R_Rs                  0.131157         -0.001935         0.001857 (15-84 p)
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.452875         -0.105088         0.108208 (15-84 p)
+
+----- common model:  limb_darkening
+ld_c1                 0.519648         -0.018222         0.018057 (15-84 p)
+ld_c2                 0.116236         -0.040334         0.040102 (15-84 p)
+
+----- common model:  polynomial_trend
+poly_c0               0.761678         -0.000296         0.000295 (15-84 p)
+poly_c1               0.002534         -0.002076         0.002072 (15-84 p)
+x_zero          2459467.353901 
+poly_c2               0.052052         -0.092356         0.094894 (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.966175         -0.147463         0.144582 (15-84 p)
+i                    83.644323         -0.387744         0.380564 (15-84 p)
+mean_long            60.752180         -0.278669         0.272627 (15-84 p)
+R_Rj                  1.225358         -0.067121         0.066494 (15-84 p)
+R_Re                 13.734940         -0.752353         0.745327 (15-84 p)
+T_41                  0.069363         -0.000807         0.000891 (15-84 p)
+T_32                  0.042533         -0.001405         0.001335 (15-84 p)
+a_AU_(rho,R)          0.026629         -0.001523         0.001577 (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+40000.0   steps completed, average lnprob:,  8941.934250237662
+
+
+The chains are more than 50 times longer than the ACF, the estimate can be trusted
+
+Computing the autocorrelation time of the chains
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 1*nthin = 100
+
+Convergence criteria: less than 1% variation in ACF after 50 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+          sample variable      |    ACF   | ACF*nthin | converged at | nteps/ACF 
+                               |          |           |              |           
+          LCdata_jitter_0      |   1.680  |    168.0  |     8700     |    305.4   
+          b_b                  |   1.617  |    161.7  |     8100     |    320.9   
+          b_P                  |   1.655  |    165.5  |     8300     |    312.4   
+          b_Tc                 |   1.580  |    158.0  |     8000     |    329.0   
+          b_R_Rs               |   1.593  |    159.3  |     8000     |    326.4   
+          star_parameters_density |   1.577  |    157.7  |     7900     |    330.5   
+          limb_darkening_ld_q1 |   1.785  |    178.5  |     9200     |    284.5   
+          limb_darkening_ld_q2 |   1.721  |    172.1  |     8900     |    296.9   
+          polynomial_trend_poly_c0 |   1.527  |    152.7  |     7700     |    342.5   
+          polynomial_trend_poly_c1 |   1.614  |    161.4  |     8100     |    321.5   
+          polynomial_trend_poly_c2 |   1.489  |    148.9  |     7500     |    352.6   
+
+All the chains are longer than 100*ACF 
+Suggested value for burnin:  9200
+
+
+====================================================================================================
+     Statistics on the posterior of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002847      -0.000078      0.000078 (15-84 p) ([ 0.000023,  0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.660634      -0.025391      0.023344 (15-84 p) ([ 0.000000,  2.000000])
+P                1      1.401378      -0.000001      0.000001 (15-84 p) ([ 1.300000,  1.500000])
+Tc               2  2459467.356605      -0.000220      0.000221 (15-84 p) ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131133      -0.001896      0.001901 (15-84 p) ([ 0.000010,  0.500000])
+
+----- common model:  star_parameters
+density          6      1.452870      -0.106565      0.110501 (15-84 p) ([ 0.000000,  5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.403704      -0.053120      0.057403 (15-84 p) ([ 0.000000,  1.000000])
+ld_q2            5      0.408541      -0.024633      0.028115 (15-84 p) ([ 0.000000,  1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761678      -0.000294      0.000297 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002529      -0.002075      0.002059 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.052317      -0.093569      0.095176 (15-84 p) ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Statistics on the physical parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002847         -0.000078         0.000078 (15-84 p)
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.660634         -0.025391         0.023344 (15-84 p)
+P                 1.401378e+00     -9.952656e-07     1.002485e-06 (15-84 p)
+e                 0.000000e+00 
+Tc              2459467.356605         -0.000220         0.000221 (15-84 p)
+R_Rs                  0.131133         -0.001896         0.001901 (15-84 p)
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.452870         -0.106565         0.110501 (15-84 p)
+
+----- common model:  limb_darkening
+ld_c1                 0.519251         -0.017998         0.018427 (15-84 p)
+ld_c2                 0.116196         -0.040309         0.040008 (15-84 p)
+
+----- common model:  polynomial_trend
+poly_c0               0.761678         -0.000294         0.000297 (15-84 p)
+poly_c1               0.002529         -0.002075         0.002059 (15-84 p)
+x_zero          2459467.353901 
+poly_c2               0.052317         -0.093569         0.095176 (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.966168         -0.149595         0.147569 (15-84 p)
+i                    83.641365         -0.388589         0.385065 (15-84 p)
+mean_long            60.751075         -0.276719         0.277141 (15-84 p)
+R_Rj                  1.225420         -0.066861         0.065084 (15-84 p)
+R_Re                 13.735633         -0.749438         0.729526 (15-84 p)
+T_41                  0.069361         -0.000820         0.000904 (15-84 p)
+T_32                  0.042520         -0.001400         0.001327 (15-84 p)
+a_AU_(rho,R)          0.026614         -0.001538         0.001553 (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+60000.0   steps completed, average lnprob:,  8941.379100170325
+
+
+The chains are more than 50 times longer than the ACF, the estimate can be trusted
+
+Computing the autocorrelation time of the chains
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 1*nthin = 100
+
+Convergence criteria: less than 1% variation in ACF after 50 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+          sample variable      |    ACF   | ACF*nthin | converged at | nteps/ACF 
+                               |          |           |              |           
+          LCdata_jitter_0      |   1.637  |    163.7  |     8700     |    435.6   
+          b_b                  |   1.622  |    162.2  |     8200     |    442.6   
+          b_P                  |   1.643  |    164.3  |     8300     |    436.4   
+          b_Tc                 |   1.638  |    163.8  |     8200     |    438.5   
+          b_R_Rs               |   1.599  |    159.9  |     8000     |    450.4   
+          star_parameters_density |   1.592  |    159.2  |     8100     |    451.5   
+          limb_darkening_ld_q1 |   1.767  |    176.7  |     8900     |    402.4   
+          limb_darkening_ld_q2 |   1.709  |    170.9  |     8900     |    416.1   
+          polynomial_trend_poly_c0 |   1.558  |    155.8  |     7800     |    463.5   
+          polynomial_trend_poly_c1 |   1.622  |    162.2  |     8200     |    442.5   
+          polynomial_trend_poly_c2 |   1.525  |    152.5  |     7700     |    474.0   
+
+All the chains are longer than 100*ACF 
+Suggested value for burnin:  8900
+
+
+====================================================================================================
+     Statistics on the posterior of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002848      -0.000078      0.000077 (15-84 p) ([ 0.000023,  0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.660599      -0.025209      0.023310 (15-84 p) ([ 0.000000,  2.000000])
+P                1      1.401378      -0.000001      0.000001 (15-84 p) ([ 1.300000,  1.500000])
+Tc               2  2459467.356605      -0.000219      0.000221 (15-84 p) ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131137      -0.001894      0.001906 (15-84 p) ([ 0.000010,  0.500000])
+
+----- common model:  star_parameters
+density          6      1.453025      -0.106526      0.110413 (15-84 p) ([ 0.000000,  5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.403227      -0.053153      0.057322 (15-84 p) ([ 0.000000,  1.000000])
+ld_q2            5      0.408626      -0.024607      0.028011 (15-84 p) ([ 0.000000,  1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761679      -0.000294      0.000297 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002516      -0.002062      0.002058 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.051436      -0.093344      0.095398 (15-84 p) ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Statistics on the physical parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002848         -0.000078         0.000077 (15-84 p)
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.660599         -0.025209         0.023310 (15-84 p)
+P                 1.401378e+00     -9.923212e-07     1.003661e-06 (15-84 p)
+e                 0.000000e+00 
+Tc              2459467.356605         -0.000219         0.000221 (15-84 p)
+R_Rs                  0.131137         -0.001894         0.001906 (15-84 p)
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.453025         -0.106526         0.110413 (15-84 p)
+
+----- common model:  limb_darkening
+ld_c1                 0.519296         -0.018165         0.018298 (15-84 p)
+ld_c2                 0.116053         -0.040196         0.039972 (15-84 p)
+
+----- common model:  polynomial_trend
+poly_c0               0.761679         -0.000294         0.000297 (15-84 p)
+poly_c1               0.002516         -0.002062         0.002058 (15-84 p)
+x_zero          2459467.353901 
+poly_c2               0.051436         -0.093344         0.095398 (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.966377         -0.149522         0.147452 (15-84 p)
+i                    83.643874         -0.388809         0.382325 (15-84 p)
+mean_long            60.753264         -0.274072         0.278208 (15-84 p)
+R_Rj                  1.224979         -0.065953         0.066732 (15-84 p)
+R_Re                 13.730683         -0.739266         0.747995 (15-84 p)
+T_41                  0.069362         -0.000827         0.000905 (15-84 p)
+T_32                  0.042518         -0.001390         0.001330 (15-84 p)
+a_AU_(rho,R)          0.026621         -0.001513         0.001546 (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+80000.0   steps completed, average lnprob:,  8941.205409150092
+
+
+The chains are more than 50 times longer than the ACF, the estimate can be trusted
+
+Computing the autocorrelation time of the chains
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 1*nthin = 100
+
+Convergence criteria: less than 1% variation in ACF after 50 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+          sample variable      |    ACF   | ACF*nthin | converged at | nteps/ACF 
+                               |          |           |              |           
+          LCdata_jitter_0      |   1.624  |    162.4  |     8700     |    562.2   
+          b_b                  |   1.652  |    165.2  |     8300     |    555.1   
+          b_P                  |   1.671  |    167.1  |     8400     |    548.3   
+          b_Tc                 |   1.619  |    161.9  |     8200     |    567.1   
+          b_R_Rs               |   1.591  |    159.1  |     8000     |    578.4   
+          star_parameters_density |   1.626  |    162.6  |     8200     |    564.5   
+          limb_darkening_ld_q1 |   1.732  |    173.2  |     8700     |    527.2   
+          limb_darkening_ld_q2 |   1.704  |    170.4  |     8900     |    534.5   
+          polynomial_trend_poly_c0 |   1.552  |    155.2  |     7800     |    594.2   
+          polynomial_trend_poly_c1 |   1.613  |    161.3  |     8100     |    569.9   
+          polynomial_trend_poly_c2 |   1.530  |    153.0  |     7700     |    603.2   
+
+All the chains are longer than 100*ACF 
+Suggested value for burnin:  8900
+
+
+====================================================================================================
+     Statistics on the posterior of the sampler variables     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0        10      0.002848      -0.000078      0.000078 (15-84 p) ([ 0.000023,  0.290700])
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                0      0.660669      -0.025228      0.023384 (15-84 p) ([ 0.000000,  2.000000])
+P                1      1.401378      -0.000001      0.000001 (15-84 p) ([ 1.300000,  1.500000])
+Tc               2  2459467.356606      -0.000219      0.000220 (15-84 p) ([2459467.290000, 2459467.420000])
+R_Rs             3      0.131136      -0.001895      0.001922 (15-84 p) ([ 0.000010,  0.500000])
+
+----- common model:  star_parameters
+density          6      1.452816      -0.106465      0.110760 (15-84 p) ([ 0.000000,  5.000000])
+
+----- common model:  limb_darkening
+ld_q1            4      0.403413      -0.052945      0.057163 (15-84 p) ([ 0.000000,  1.000000])
+ld_q2            5      0.408717      -0.024647      0.027723 (15-84 p) ([ 0.000000,  1.000000])
+
+----- common model:  polynomial_trend
+poly_c0          7      0.761679      -0.000295      0.000297 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c1          8      0.002518      -0.002064      0.002063 (15-84 p) ([-1000000.000000, 1000000.000000])
+poly_c2          9      0.051855      -0.093814      0.095260 (15-84 p) ([-1000000.000000, 1000000.000000])
+
+====================================================================================================
+     Statistics on the physical parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  LCdata
+jitter_0              0.002848         -0.000078         0.000078 (15-84 p)
+
+
+----------  LCdata      ----- model:  polynomial_trend
+
+----------  LCdata      ----- model:  lc_model_b
+
+----- common model:  b
+b                     0.660669         -0.025228         0.023384 (15-84 p)
+P                 1.401378e+00     -9.978433e-07     1.007173e-06 (15-84 p)
+e                 0.000000e+00 
+Tc              2459467.356606         -0.000219         0.000220 (15-84 p)
+R_Rs                  0.131136         -0.001895         0.001922 (15-84 p)
+omega                90.000000 
+
+----- common model:  star_parameters
+density               1.452816         -0.106465         0.110760 (15-84 p)
+
+----- common model:  limb_darkening
+ld_c1                 0.519441         -0.018140         0.018197 (15-84 p)
+ld_c2                 0.115965         -0.039989         0.040031 (15-84 p)
+
+----- common model:  polynomial_trend
+poly_c0               0.761679         -0.000295         0.000297 (15-84 p)
+poly_c1               0.002518         -0.002064         0.002063 (15-84 p)
+x_zero          2459467.353901 
+poly_c2               0.051855         -0.093814         0.095260 (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+a_Rs                  5.966091         -0.149446         0.147915 (15-84 p)
+i                    83.642286         -0.388720         0.384328 (15-84 p)
+mean_long            60.752557         -0.274468         0.277449 (15-84 p)
+R_Rj                  1.225125         -0.065535         0.065785 (15-84 p)
+R_Re                 13.732319         -0.734581         0.737383 (15-84 p)
+T_41                  0.069360         -0.000830         0.000910 (15-84 p)
+T_32                  0.042516         -0.001401         0.001332 (15-84 p)
+a_AU_(rho,R)          0.026635         -0.001521         0.001539 (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+100000.0   steps completed, average lnprob:,  8941.298593177438
+
+
+emcee completed
+

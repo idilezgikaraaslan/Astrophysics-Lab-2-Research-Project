@@ -1,0 +1,54 @@
+inputs:
+  LCdata:
+    file: target_PDCSAP_flattened_biweight.dat
+    kind: Phot
+    models:
+      - lc_model
+common:
+  planets:
+    b:
+      orbit: circular
+      parametrization: Eastman2013_Tcent
+      boundaries:
+        # Use the Period from BLS/TLS and add +- 0.1 to select the boundary
+        P: [1.30, 1.50]
+        Tc: [2455230.9, 2455231.1]
+      spaces:
+        P: Linear
+  star:
+    star_parameters:
+      priors:
+        radius: ['Gaussian', 0.96, 0.05]
+        mass: ['Gaussian', 0.98, 0.06]
+        density: ['Gaussian', 1.12, 0.15]
+    limb_darkening:
+      type: ld_quadratic
+      parametrization: Kipping
+      # the sampler will use the Kipping parametrization,
+      # the corresponding parameters are called ld_q1 and ld_q2
+      # in the output file you'll need to search for ld_c1 and ld_c1
+      # try with or without the prior
+      #priors:
+      priors:
+         ld_c1: ['Gaussian', 0.4241, 0.0133]
+         ld_c2: ['Gaussian', 0.1332, 0.0331]
+models:
+  lc_model:
+    kind: batman_transit
+    planets:
+      - b
+parameters:
+  Tref: 2458000.0
+  use_tex: False
+solver:
+  pyde:
+    ngen: 50000
+    npop_mult: 4
+  emcee:
+    npop_mult: 4
+    nsteps: 100000
+    nsave: 20000
+    nburn: 20000
+    thin: 100
+    use_threading_pool: False
+  recenter_bounds: True
