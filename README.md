@@ -17,7 +17,7 @@ The dataset used in this section originates from previous TASTE observations. Th
 - **Aperture photometry** for flux extraction  
 - **Barycentric Julian Date (BJD)** correction to account for light-travel time
 
-The provided Python scripts, including the use of the `PyORBIT` (Malavolta 2016) package, were developed and guided by Prof. Luca Malavolta. This part of the project was carried out in collaboration with **Valerio Campobasso** and **Alex Fahlman**. Their contributions, along with the support from Prof. Malavolta, are gratefully acknowledged.
+The provided Python scripts, including the use of the `PyORBIT` (Malavolta 2016) package, were developed and guided by Prof. Luca Malavolta. This project was carried out in collaboration with **Valerio Campobasso** and **Alex Fahlman**. Their contributions, along with the support from Prof. Malavolta, are gratefully acknowledged.
 
 ---
 
